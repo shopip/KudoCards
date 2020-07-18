@@ -1,0 +1,389 @@
+
+$theme-colors: ( 
+    "primary":#e69525  
+);
+
+@import "~bootstrap/dist/css/bootstrap-grid.min.css";
+@import "./node_modules/bootstrap/scss/bootstrap.scss";
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+
+.filterInputs {
+
+    min-width: 175px !important;
+    height: 40px !important;
+}
+.mat-card-avatar {
+
+    width: 56px !important;
+    height: 56px !important ;
+    
+}
+
+.example-additional-selection {
+    opacity: 0.75;
+    font-size: 0.75em;
+  }
+  
+
+.mat-card-avatar-small {
+
+    width: 40px !important;
+    height: 40px !important ;
+    
+}
+
+.mat-card-avatar-vsmall {
+
+    width: 28px !important;
+    height: 28px !important ;
+    
+}
+
+.pHasError  {
+
+    border-color: #dc3545;
+    padding-right: calc(1.5em + 0.75rem);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23dc3545' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+
+}
+
+.pHasSuccess {
+
+    border-color: #28a745;
+    padding-right: calc(1.5em + 0.75rem);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+
+}
+
+.mainKudoBody {
+
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+}
+
+.mainKudoBodySmall {
+
+    height: 100vh;
+    overflow-y: auto;
+
+}
+
+.customValidationForm {
+
+    background-color: red;
+}
+
+.kudo-type-image {
+    max-width: 150px;
+    max-height: 150px;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.teamBadge {
+
+    margin-top: -10px;
+    background: yellowgreen;
+    padding: 5px 5px 5px 10px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    max-width: 80px;
+    max-height: px;
+    overflow: hidden;
+
+}
+
+.scrollable {
+
+   height: 92%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+   
+}
+
+.smallScreenUserIcon {
+
+    margin-top: -20px;
+}
+
+.statusOnline {
+
+    color:  'green';
+}
+
+.statusOffline {
+
+    color:  '#ccc'
+}
+
+.icon-display {
+    transform: scale(0.5);
+ }
+
+.scrollable-h {
+
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    margin-bottom: 0px;
+    -webkit-overflow-scrolling: touch;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+}
+
+.scrolable-horizontal {
+
+    
+    margin-bottom: 0px;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+}
+
+
+
+.kudo-mat-card-avatar-small {
+    width: 30px !important;
+    height: 30px !important ;
+}
+
+.kudoMatCardHeader {
+
+    width: calc(100% + 32px);
+    margin: 0px -16px 0px -16px;
+    height: 46px;
+    margin-top: -16px !important;
+    border-bottom-left-radius: 25px !important;
+    // display: flex;
+    // justify-content: space-between;
+    
+
+}
+
+.kudoAvatar {
+
+  
+    margin: 4px 0px 10px -18px;
+    z-index: 100;
+   
+    
+
+}
+
+.mat-card-title {
+    font-size: 1.2em !important;
+}
+
+.primary-progress .mat-progress-bar-fill::after {
+    background-color: #e69525 !important;
+  }
+
+  .primary-progress-circle .mat-progress-spinner circle, .mat-spinner circle {
+    stroke: #e69525 !important;
+    }
+
+    .white-progress-circle .mat-progress-spinner circle, .mat-spinner circle {
+        stroke: #e69525 !important;
+        }
+
+  .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 0.5em 0 1em 0;
+    
+}
+
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: #ffc107 !important;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.mat-form-field-appearance-outline.mat-success .mat-form-field-outline-thick {
+    color: green !important;
+}
+
+.mat-card-title-group {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.removeButton {
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.topIconMenu {
+   
+    cursor: pointer;
+    color: #e69525;
+}
+
+.paperLine {
+    font-size: 16px;
+  
+    /* Begin The Redundancies */
+    z-index: 0;
+    background-image: 
+      -webkit-linear-gradient(0deg, transparent 5em, rgba(255,0,0,.2) 0, transparent 5.1em),
+      -webkit-linear-gradient(rgba(0,0,255,.3) 1px, transparent 0);
+    background-image: 
+      -moz-linear-gradient(0deg, transparent 5em, rgba(255,0,0,.2) 0, transparent 5.1em),
+      -moz-linear-gradient(rgba(0,0,255,.3) 1px, transparent 0);
+    background-image: 
+      -o-linear-gradient(0deg, transparent 5em, rgba(255,0,0,.2) 0, transparent 5.1em), 
+      -o-linear-gradient(rgba(0,0,255,.3) 1px, transparent 0);
+    background-image: 
+      -ms-linear-gradient(0deg, transparent 5em, rgba(255,0,0,.2) 0, transparent 5.1em), 
+      -ms-linear-gradient(rgba(0,0,255,.3) 1px, transparent 0);
+    -webkit-background-size: 100% 2em;
+    -moz-background-size: 100% 2em;
+  
+    /* In a perfect world... */
+    background-image: 
+      linear-gradient(0deg, transparent 5em, rgba(255,0,0,.2) 0, transparent 5.1em), 
+      linear-gradient(rgba(0,0,255,.3) 1px, transparent 0);
+    background-size: 100% 2em;
+
+
+}
+
+p.with-eight {
+    text-shadow:
+        0.05em 0 black,
+        0 0.05em black,
+        -0.05em 0 black,
+        0 -0.05em black,
+        -0.05em -0.05em black,
+        -0.05em 0.05em black,
+        0.05em -0.05em black,
+        0.05em 0.05em black;
+}
+
+p.highlight {
+    color: #e69525;
+    
+    font-size: 1.2 em;
+    text-shadow:
+        0.07em 0 white,
+        0 0.07em white,
+        -0.07em 0 white,
+        0 -0.07em white;
+}
+
+.footerEmail {
+    display: block;
+    padding: 0em;
+    margin: 0em;
+    font-size: 80%;
+    color: #6c757d;
+    line-height: 0.6em !important;
+}
+
+.kudoToHeader {
+
+    min-height: 100px;
+    width: 100%;
+    
+   
+
+}
+
+.mat-raised-button.mat-primary, .mat-flat-button.mat-primary{
+    background-color: #e69525;
+    color: white;
+ }
+
+ .filterRow {
+    margin-top: 80px;
+ }
+
+ .searchButton {
+
+   min-width: 150px !important;
+    height : 40px;
+
+ }
+
+ .searchButtonSelected {
+
+    background-color: #e69525;
+    color: white !important;    
+
+ }
+
+ .scrolling-wrapper-flexbox {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    
+  }
+
+.scrolling-wrapper-flexbox {
+    height: 80px;
+    margin-bottom: 0px;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .kudo-mat-card-avatar {
+        width: 40px !important;
+        height: 40px !important ;
+    }
+    .kudo-mat-card,.mat-card-subtitle {
+        font-size: 0.7em !important;
+        margin-bottom: 2px !important;
+        margin-left: -16px;
+    }
+
+    .kudo-mat-card-subtitle {
+        font-size: 0.6em !important;
+        margin-bottom: 2px !important;
+        margin-left: -16px;
+    }
+
+
+    
+
+    .kudoMatCardHeader {
+
+       
+        margin-top: -16px !important;
+        border-bottom-left-radius: 5px !important;
+        
+    
+    }
+
+    .removeButton {
+        font-size: 0.8em;
+       
+    }
+
+   
+
+
+
+}
+
+  
+
+

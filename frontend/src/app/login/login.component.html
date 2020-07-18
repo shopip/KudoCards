@@ -1,0 +1,83 @@
+<div class="container d-flex justify-content-center" style="height: 90vh">
+
+  <div class="row justify-content-center align-self-center w-100 ">
+
+   
+    <h1 class="w-100 p-0 m-0 text-center text-primary">Agilibo Kudo Card</h1>
+     
+        <div *ngIf='!loginResponse' class="login-container mt-3 w-100 p-5 card shadow" >
+          
+            <form [ngClass]="{
+                                'was-validated' : startValidation
+                            }"  
+            novalidate #loginForm="ngForm" (submit)="onSubmit(loginForm)">
+              
+                <div class="form-group has-danger">
+                  <label for="email">Email address</label>
+                  <input type="email" name="username" [ngClass]="{
+                    'form-control': true,
+                    'is-invalid': !validEmail
+                }"    id="email" aria-describedby="emailHelp" placeholder="Enter email" ngModel required (ngModelChange)="onEmailChange($event)">
+                  <div class="invalid-feedback"> Invalid Email </div>
+
+                
+                </div>
+              
+             
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" id="password" name="password" placeholder="Password" ngModel>
+                </div>
+
+      
+
+                <div *ngIf='errorResponse.error' class="alert alert-danger alert-dismissible fade show" role="alert">
+                  {{errorResponse.message}}
+                  <button type="button" class="close" (click)="closeAlert()" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+
+                
+              <mat-spinner-button  class=""  [options]="btnOpts">Submit</mat-spinner-button>
+            
+          </form> 
+     
+          </div>
+
+
+        <div *ngIf='loginResponse' class="login-container mt-3 w-100 p-5 card shadow" >
+          
+          <div  class="form-group">
+
+            <mat-form-field class="w-100">
+              <mat-label>Select Company</mat-label>
+              <mat-select [(value)]="company">
+                <mat-option>None</mat-option>
+            
+                  <mat-option *ngFor="let item of loginResponse.user_data" [value]="item">
+                    {{item.name}}
+                  </mat-option>
+                 
+              </mat-select>
+            </mat-form-field>
+
+          </div>
+
+          <div *ngIf='errorResponse.error' class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{errorResponse.message}}
+            <button type="button" class="close" (click)="closeAlert()" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          
+          <mat-spinner-button (click)="chooseCompany()"  class="btn btn-primary w-100 text-white" [options]="btnSubmitOpts">Select</mat-spinner-button>
+   
+        </div>
+
+
+  </div>
+
+</div>
+
+

@@ -1,0 +1,35 @@
+
+ <div class="container-fluid p-0 m-0">
+    <mat-toolbar class="fixed-top"  >
+    <mat-toolbar-row class="justify-content-center d-sm-none"> 
+
+      <div class="text-primary">Kudo Board : {{company.name}}</div>
+
+    </mat-toolbar-row>
+      <mat-toolbar-row class="pr-5 justify-content-center">
+        <div class="d-none d-sm-block m-4 text-primary d-sm-none d-md-block">Kudo Board : {{company.name}}</div>
+        <div class="example-spacer d-none d-sm-block"></div>
+
+        <!-- <button type="button" (click)="showCreateDialog()" class="btn btn-success text-white pl-5 pr-5"><i class="fa fa-pencil"></i>Post A Kudo</button> -->
+
+        <button mat-raised-button (click)="showCreateDialog()" color="primary" class="ml-2">
+          <mat-icon>add</mat-icon>
+          POST A KUDO
+        </button>
+
+        <button mat-raised-button (click)="logout()" color="primary" class="ml-2">
+          <mat-icon>login</mat-icon>
+         Log Out
+        </button>
+      </mat-toolbar-row>
+  
+    </mat-toolbar>
+
+   
+
+  </div>
+  
+
+ 
+
+<app-post-list> </app-post-list>

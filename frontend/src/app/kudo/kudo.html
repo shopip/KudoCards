@@ -1,0 +1,38 @@
+
+ <div class="container-fluid p-0 m-0">
+    <mat-toolbar class="fixed-top"  >
+      <mat-toolbar-row >
+        <span class="text-primary  m-sm-4">Kudo Board : {{company.name}}</span>
+        <span class="example-spacer"></span>
+
+        <mat-icon  #tooltip="matTooltip"
+        matTooltip="Play Kudo Board" (click)="showPlayDialog()"  class="d-sm-none ml-2 topIconMenu" aria-hidden="false" aria-label="Example add icon">play_arrow</mat-icon>
+       
+        <mat-icon  #tooltip="matTooltip"
+        matTooltip="Create A New Post" (click)="showCreateDialog()"  class="d-sm-none ml-2 topIconMenu" aria-hidden="false" aria-label="Example add icon">add</mat-icon>
+
+        <mat-icon  #tooltip="matTooltip"
+        matTooltip="Log Out" (click)="logout()" class=" d-sm-none ml-2 topIconMenu" aria-hidden="false" aria-label="Example log out icon">login</mat-icon>
+
+        <button mat-raised-button (click)="showPlayDialog()" color="primary" class="ml-2 d-none d-sm-block mr-2">
+          <mat-icon>play_arrow</mat-icon>
+          Play Kudo Board
+        </button>
+
+        <button mat-raised-button (click)="showCreateDialog()" color="primary" class="ml-2 d-none d-sm-block mr-2">
+          <mat-icon>add</mat-icon>
+          POST A KUDO
+        </button>
+
+        <button *ngIf="!ssoLogin" mat-raised-button (click)="logout()" color="primary" class="ml-2 d-none d-sm-block mr-4">
+          <mat-icon>login</mat-icon>
+         Log Out
+        </button>
+      </mat-toolbar-row>
+  
+    </mat-toolbar>
+
+  </div>
+
+
+<app-post-list> </app-post-list>

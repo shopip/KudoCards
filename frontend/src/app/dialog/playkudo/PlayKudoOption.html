@@ -1,0 +1,79 @@
+
+<h1 mat-dialog-title>Play Kudo Board</h1>
+<form [formGroup]="myForm">
+<div >
+ 
+    <div class="container-fluid mb-3 p-0" > 
+
+
+
+        <div class="row ">
+
+          
+
+    
+
+            <div   class="form-group col-sm-12 col-md-12">
+    
+                <mat-select  formControlName="team" class="form-control" (selectionChange)="teamChanged()" placeholder="Team Name">
+              
+                    <mat-option *ngFor="let item of teams" [value]="item">
+                      {{item.name}}
+                    </mat-option>
+                   
+                </mat-select>
+    
+            </div>
+
+            <div  class="form-group col-sm-12 col-md-12"  >
+                
+            
+              <div class="d-flex flex-row justify-content-center align-items-center">
+
+                <mat-select   formControlName="sprintItem" class="form-control" placeholder="Sprints">
+              
+                  <mat-option *ngFor="let item of sprintsList" [value]="item">
+                    {{item.name}}
+                  </mat-option>
+                 
+              </mat-select>
+
+              <mat-spinner diameter="25" class="ml-3"  *ngIf="isLoading"></mat-spinner>
+
+
+              </div>
+
+               
+
+                
+                
+            </div>
+                       
+    
+    
+        </div>
+
+
+
+    </div>
+
+</div>
+
+
+<div  mat-dialog-actions >
+  <button mat-button type="button" 
+  [ngClass]="{
+    'btn-primary' : myForm.valid,
+    'text-white':  myForm.valid
+    }"  
+   (click)="onSubmit()">Submit</button>
+  <button mat-button mat-dialog-close cdkFocusInitial>Cancel</button>
+</div>
+
+</form>
+
+
+
+
+
+

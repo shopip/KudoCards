@@ -1,0 +1,249 @@
+<!-- <div class="container-fluid bg-primary h-100"  [ngStyle]="{'min-height': '200px'}">
+
+
+
+
+</div> -->
+
+
+<div   [ngClass]="{'mainKudoBody': curScreenType.type == 0,
+                   'mainKudoBodySmall' :  curScreenType.type == 1
+                }">
+
+
+    
+    
+<mat-grid-list cols="6" rowHeight="6.25vh">
+
+
+    <mat-grid-tile colspan = "6" rowspan="1">
+        <div class="container-fluid p-0 m-0">
+            <mat-toolbar  >
+              <mat-toolbar-row class="bg-primary" >
+        
+                <span class="text-white  m-sm-4">{{playKudoDTO.team.name}} : {{playKudoDTO.sprint.name}}</span>
+                <span class="example-spacer"></span>
+        
+                <button (click)="goHome()" mat-raised-button  class="ml-2 d-none d-sm-block mr-2">
+                    <mat-icon>home</mat-icon>
+                   Home
+                  </button>
+          
+            
+              </mat-toolbar-row>
+          
+            </mat-toolbar>
+        
+        </div>
+       
+    </mat-grid-tile>
+
+    <mat-grid-tile class="card shadow"
+        *ngFor="let tile of tiles"
+        [colspan]="tile.cols"
+        [rowspan]="tile.rows"
+
+        >
+        
+       <div *ngIf="tile.type === 0" class="container-fluid  h-100 text-center d-flex justify-content-center">
+
+        <!-- Wheel div start-->
+       <div class="align-self-center d-flex flex-column"> 
+
+         <ngx-wheel  
+                    #wheel
+                    width='250'
+                    height='250'
+                    spinDuration='8'
+                    [items]='items'
+                    [innerRadius]='20'
+                    [spinAmount]='10'
+                    [textOrientation]='textOrientation'
+                    [textAlignment]='textAlignment'
+                    pointerStrokeColor='black'
+                    pointerFillColor='gold'
+                    [idToLandOn]='idToLandOn'
+                    (onSpinStart)='before()'
+                    (onSpinComplete)='after()'>
+    
+        </ngx-wheel> 
+
+       
+        <button (click)="spinTheWheel()" class="btn btn-primary text-white">Spin</button>
+        
+
+       </div>
+       
+
+       
+       
+        <!-- Wheel div end--> 
+       </div>
+
+       <div *ngIf="tile.type === 1"
+       [ngClass]="{'scrollable': curScreenType.type == 0,
+                  'h-100': curScreenType.type == 0,
+                  'scrollable-h': curScreenType.type == 1
+
+                    }"
+
+       class="container-fluid  scrollable-h text-center">
+
+       <div class="w-100 text-center mt-3">
+
+        Team Members
+
+       </div>
+
+        <div 
+        [ngClass]="{'d-flex': curScreenType.type == 0,
+                    'flex-row': curScreenType.type == 0,
+                    'd-inline-flex': curScreenType.type == 1 ,
+                    'flex-column': curScreenType.type == 1,
+                    'justify-content-center': curScreenType.type == 1,
+                    'align-items-center': curScreenType.type == 1,
+                    'ml-1': curScreenType.type == 1 
+                               
+                }"
+        
+        class="card shadow mt-2 mb-2 p-1" *ngFor="let user of this.playKudoDTO.team.users" >
+                
+            <span  *ngIf="curScreenType.type == 1"  class="d-inline-flex align-self-end"> <mat-icon class="align-self-end icon-display" [ngStyle]="{'color': user.online ? 'green': '#ccc'}">lens</mat-icon></span>
+            <img [ngClass]="{'smallScreenUserIcon': curScreenType.type == 1}"  mat-card-avatar class="kudo-mat-card-avatar-small"  [src]="user.profile_image ? user.profile_image : 'assets/images/user.svg'" >
+
+            <P class="align-self-center align-items-center m-0 p-0 ml-2 x">
+               {{user.name}} 
+            </P>
+
+            <span class="example-spacer"></span>
+
+            <mat-icon *ngIf="user.online && curScreenType.type == 0" class="icon-display align-self-center align-items-center" [ngStyle]="{'color':'green'}">lens</mat-icon>
+
+        </div>
+
+
+
+       </div>
+
+       <div *ngIf="tile.type === 2" class="container-fluid  h-100 scrollable">
+
+        <!-- Kudo Card DIV Start-->
+
+       
+        <div *ngIf="!isWheelSpinning"  class="row ml-3 mr-3 mb-5 text-center">
+
+                    <div  [ngClass]="{'col-6': curScreenType.type == 0,'col-8': curScreenType.type == 1}" class="mb-4 mt-4" *ngFor="let element of postListItems">
+
+                        <mat-card>
+                            <mat-card-header class="align-items-center kudoMatCardHeader border-bottom-5" [style.background-color]="element.kudoType.color">
+            
+                            <img mat-card-avatar    [src]="element.toImage ? element.toImage : 'assets/images/user.svg'" class="kudoAvatar ">
+                            <mat-card-title class="mt-2 text-uppercase text-white">{{element.kudoType.title}}</mat-card-title>
+            
+                            
+                            </mat-card-header>
+                        
+                            <mat-card-content >
+            
+                            <div class="d-flex flex-row">
+                            <div class="">
+            
+                                <img class="mt-2" style="width: 100px;height:80px ;"  [src]="element.kudoType.icon">
+                            </div>
+            
+                            <div class="d-flex  kudoToHeader align-items-center justify-content-start" >
+                                <h4 class="mt-3 ml-4 float-center">{{ element.toName }}</h4>
+            
+                            </div>
+                            </div>
+            
+                            <div class="d-flex lead paperLine " style="min-height: 140px;">
+            
+                            <p class="highlight" style="font-size: 1em;">
+                                {{element.content}}
+                            </p>
+                            </div>
+            
+                            <div class="float-bottom d-flex flex-row justify-content-end align-items-center">
+            
+                            <img   [src]="element.fromImage ? element.fromImage : 'assets/images/user.png'" class="mat-card-avatar-vsmall rounded-circle mr-2 mt-1">
+                            <div>
+                                
+                                <span  class="m-0 small p-0">{{element.fromName}}</span>
+                                <span  class="footerEmail m-0 p-0 small">{{element.fromEmail}}</span>
+                                
+                            </div>
+                            </div>
+                            
+                            </mat-card-content>
+                        
+                        </mat-card>
+
+
+                    </div>
+
+                    <div *ngIf="postListItems.length == 0" class="row w-100 justify-content-center align-items-center mt-4">
+
+                        No Kudo Card to Show
+
+                    </div>
+
+                  
+
+
+        </div>
+
+        <div *ngIf="isWheelSpinning" class="row w-100 justify-content-center align-items-center mt-4">
+
+            Waiting For The Winner.
+
+        </div>
+
+
+        
+
+
+
+       
+
+        <!-- Kudo Card DIV End-->
+
+
+
+       </div>
+
+       <div *ngIf="tile.type === 3" class="container-fluid  scrollable ">
+
+        <!-- History DIV Start-->
+
+        <div class="w-100 text-center mt-3">
+
+           Winners History
+    
+        </div>
+
+        <div class="card d-flex flex-column shadow mt-2 mb-2 p-1 " *ngFor="let items of historyListItems" >
+
+            <h6 class="p-0 m-0 text-right">{{items.createdAt |  date:'MM/dd/yyyy'}} </h6>
+            <div class=" d-flex flex-row">
+
+                <img mat-card-avatar class="kudo-mat-card-avatar-small"  src='assets/images/user.svg' >
+           
+                <P class="align-self-center align-items-center m-0 p-0 ml-2"> {{items.userName}} </P>
+
+            </div>
+            
+
+           
+
+        </div>
+
+        <!-- History Card DIV End-->
+
+       </div>
+       
+    </mat-grid-tile>
+</mat-grid-list>
+
+</div>
+  
