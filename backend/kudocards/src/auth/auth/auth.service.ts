@@ -67,10 +67,6 @@ export class AuthService {
     { 
       const user = await this.userService.findByEmail(loginData.userEmail); 
 
-      const companies = {} as UserData;
-      companies.id = loginData.companyKey;
-      companies.name = loginData.companyName ;
-
       if (!user)
       {
         const newUser = new User ();
@@ -143,12 +139,19 @@ export class AuthService {
         throw new HttpException({ status: HttpStatus.UNAUTHORIZED, message: 'Username or password is invalid' }, HttpStatus.UNAUTHORIZED);
          
         }
-      
+
+        try {
+
+          const userCompanies = (JSON.parse(JSON.stringify(userData.data)) as  UserData[] );
+          const currentCompany = userCompanies[0];
+          delete currentCompany.units;
+
+              
         const payload = {
 
           image : userData.avatar,
           email : userData.email,
-          company : userData.data,
+          company : currentCompany,
           sub : userData.id,
           username : userData.name,
           token : userData.token
@@ -168,6 +171,18 @@ export class AuthService {
            'user_data': userData.data,
            'status': 200
         };
+          
+        } catch (error) {
+
+          throw new HttpException({ status: HttpStatus.UNAUTHORIZED, message: 'Username or password is invalid' }, HttpStatus.UNAUTHORIZED);
+          
+        }
+       
+
+       
+
+
+  
 
       });
 

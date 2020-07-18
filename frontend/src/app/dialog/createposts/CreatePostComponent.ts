@@ -168,7 +168,7 @@ export class CreatePostComponent implements OnInit {
 
     getUserListUrl(query): string {
 
-        return environment.coreApiUrl + ApiConfig.userList + '?query=' + query;
+        return environment.apiUrl + ApiConfig.userList + '?query=' + query;
     }
 
     searchOptionSelected(value) {
