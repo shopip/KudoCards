@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl : 'http://kudocards.agilibo.com/',
+  apiUrl : 'https://kudocards.agilibo.com/',
   coreApiUrl : 'https://agilibo.com/api/v1/'
 };
