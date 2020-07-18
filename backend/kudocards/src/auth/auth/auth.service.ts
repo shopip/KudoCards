@@ -79,12 +79,12 @@ export class AuthService {
         newUser.email = loginData.userEmail;
         newUser.token = loginData.token;
         newUser.password = loginData.token;
-        newUser.data = JSON.parse(JSON.stringify(companies));
+        newUser.data = JSON.parse(JSON.stringify(loginData.companies));
        return  await this.userService.create(newUser);
       }
 
       else{
-        user.data =  JSON.parse(JSON.stringify(companies));
+        user.data =  JSON.parse(JSON.stringify(loginData.companies));
         user.token = loginData.token ;
         user.avatar = loginData.profileImage ;
         return  await this.userService.update(user);

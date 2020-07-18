@@ -142,7 +142,7 @@ export class PlayKudoComponent implements OnInit, OnDestroy {
         text: item.first_name,
         id: item.user_id,
         textFillStyle: 'white',
-        textFontSize: '12'
+        textFontSize: '10'
       };
 
     this.items.push(wheelItem);

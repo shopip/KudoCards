@@ -19,6 +19,7 @@ export interface AgiliboTokenDTO {
     companyKey: number;
     profileImage : string ;
     companyName: string;
+    companies : string ;
 }
 
 export interface AgiliboTokenResponseDTO {
