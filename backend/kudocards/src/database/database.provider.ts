@@ -11,6 +11,7 @@ export const databaseProviders = [
       username: 'root',
       password: 'secret',
       database: 'kudo',
+      charset : 'utf8mb4',
       entities: [
           __dirname + '/../**/*.entity{.ts,.js}',
       ],
