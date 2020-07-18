@@ -4,8 +4,8 @@
 //coreApiUrl : 'https://agilibo.com/api/v1/'
 export const environment = {
   production: false,
-  apiUrl : 'http://localhost:3000/',
-  coreApiUrl : 'http://localhost/api/v1/'
+  apiUrl : 'http://kudocards.agilibo.com',
+  coreApiUrl : 'https://agilibo.com/api/v1/'
 };
 
 /*
