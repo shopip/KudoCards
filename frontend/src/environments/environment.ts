@@ -4,7 +4,7 @@
 //coreApiUrl : 'https://agilibo.com/api/v1/'
 export const environment = {
   production: false,
-  apiUrl : 'http://kudocards.agilibo.com',
+  apiUrl : 'http://kudocards.agilibo.com/',
   coreApiUrl : 'https://agilibo.com/api/v1/'
 };
 
