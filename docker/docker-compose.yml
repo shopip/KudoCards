@@ -29,6 +29,7 @@ services:
     restart: "no"
     ports:
       - "${BACKEND_WEB_HTTP_PUBLISH_PORT}:3000"
+      - "${BACKEND_WEB_HTTPS_PUBLISH_PORT}:3000"
     networks:
       - default
     volumes:
