@@ -46,12 +46,11 @@ export class AgiliboService {
 
         if (!query) query = '';
         const url = `${apiconfig.coreUrl}${apiconfig.userList}?company_id=${company}&q=1&per_page=5&order_by=id&order_direction=desc&page=1&q=${query}`;
-        console.log(url);
         return this.http.get(url,{headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`
         }})
-        .pipe(map(response => response.data), tap((response)=> {console.log(response.data)})).toPromise()
+        .pipe(map(response => response.data)).toPromise()
         .catch((error)=> {
             console.log(error);
             return null ;

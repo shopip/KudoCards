@@ -30,9 +30,11 @@ export class MailService {
             // eslint-disable-next-line @typescript-eslint/camelcase
             kudo_message : createKudoDTO.content,
             // eslint-disable-next-line @typescript-eslint/camelcase
-            kudo_image : JSON.parse(JSON.stringify(createKudoDTO.kudoType)).image,
+            kudo_image : JSON.parse(JSON.stringify(createKudoDTO.kudoType)).icon,
              // eslint-disable-next-line @typescript-eslint/camelcase
             kudo_color : JSON.parse(JSON.stringify(createKudoDTO.kudoType)).color,
+
+            url : apiconfig.kudoUrl,
 
           }
 

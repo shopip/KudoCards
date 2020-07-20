@@ -1,5 +1,6 @@
 export const apiconfig = {
-
+  
+    kudoUrl: 'https://kudocards.agilibo.com/',
     coreUrl: 'https://agilibo.com/api/v1/',
     login: 'user/login',
     userList: 'users',
