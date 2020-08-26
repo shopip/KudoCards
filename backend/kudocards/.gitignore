@@ -26,6 +26,12 @@ lerna-debug.log*
 .settings/
 *.sublime-workspace
 
+# CERT
+
+.crt
+.key
+.pem
+
 # IDE - VSCode
 .vscode/*
 !.vscode/settings.json
