@@ -1,5 +1,4 @@
 export const apiconfig = {
-  
     kudoUrl: 'https://kudocloud.agilibo.com/',
     coreUrl: 'https://agilibo.com/api/v1/',
     login: 'user/login',
